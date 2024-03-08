@@ -1,77 +1,98 @@
-# Last assignment for the design part of AppII
+# Learning outcome
+Knowledge about algorithms, datastructure and common programming paradigme. 
 
-We are almost finish with the course Application Developement II. 
-This assignment needs to be handin via canvas, no latter than Wensday the 20th of marts. 
+## Purpose
+The purpose of this branch is to test your knowledge about algorithm, datastructure and programming paradigm. 
 
-## Rules
-No collaborations is allowed. 
-I want to test your knowledge and also give a guideline of which topics you need to study. 
-It is okay if you do not solve all problems, the assignment has been designed this way. 
-You are not allowed to skip forward unless the test specifically states it. 
+## Goal
+This gives you a indication of wether you have a sufficient understanding of the subjects and wether you should be aware of some pit in your knowledge. 
 
-## The purpose
-The purpose of this setup, is to summarize your learning within Application Developement I/II. 
-But the primary focus is on design and design patterns using C#. 
-The test is not in any order, and will vary in complexity and time allocation. 
-You can expect that each learning outcomes will be covered in this test, and more. 
-So when you are done, you have covered the curriculum, with the exception of database design. 
 
-This gives both of us the possibility to get a indication of where your knowledge is and what you need to focus on. 
+# Part 1 - Algorithms
+## What is the key difference between a functions and algorithm?
 
-## The goal
-The goal is to test your knowledge, but also to give you a tool for cellection information og how-to solve specific problems. 
+## The following code example, why is it a algorithm and why is it not?
 
-## The outcome
-When you hav handed in the task, you have a small collections of cheatsheet and how to solve some basic problems. 
+```PYTHON
+import numpy as np
 
-# Part 1 - Getting started
-The first part is about just getting startted with everything and make sure that you have access. 
-It is devided into two sub sections, fork and assign me as collaborator. 
 
-## Fork repository
-To get started, fork this repository into your own. 
-This creates a copy of the repository and add it as one of yours. 
-You are now able to manipulate the repository without disrupting me or your fellow students. 
+def Possibility(x,y,n) :
+    global Box
+    if Box[x][y] == 0 :
+        for i in range(9) :
+            if Box[x][i] == n :
+                return False
+        for j in range(9) :
+            if Box[j][y] == n :
+                return False
+        r = x
+        c = y
+        boxx = 0
+        boxy = 0
+        while r - 3 >= 0 :
+            r = r - 3
+            boxx = boxx + 1
+        while c - 3 >= 0 :
+            c = c - 3
+            boxy = boxy + 1
+        for i in range(3) :
+            for j in range(3):
+                if Box[i+boxx*3][j+boxy*3] == n:
+                    return False
+        return True
 
-## Assign me as collaborator
-To give me a chance to provide concurrent feedback, assign me as the collaborator to the repository. 
-This way you can tag me in comments, and ask question directly - I will then respond with either: 
-1) You know this - research hard.
-2) You should know this - look here.
-3) I do not know what your are talking about, so I just provide an answer which I am satisfied with.
+def Solve() :
+    global Box
+    for r in range(9):
+        for c in range(9):
+            if Box[r][c] == 0:
+                for n in range(1,10):
+                    if Possibility(r,c,n) == True:
+                        Box[r][c] = n
+                        if Solve() == False:
+                            Box[r][c] = 0
+                        else :
+                            return True
+                return False
 
-# Part 2 - Creating a branch
-For this part you are required to create a new branch, where you can collect all the information, cheatsheet, advice, howto etc you collect. 
-So a good advice, take notes on every step of the way, a note can be in the following form:
-1) Diagram - visual representation of a concept. 
-2) Flash card - two sided card with question on side A and asnwer on side B
-3) Keyword - Write down keyword on a subject
-4) Ask question - ask question about the subject
+Box = [
+    [5, 0, 0,   6, 7, 0,    9, 0, 0],
+    [0, 4, 0,   8, 0, 0,    0, 0, 0],
+    [8, 0, 0,   5, 0, 0,    6, 1, 3],
 
-## Create a new branch named "toolbox". 
-Create a new branch under the tab branch, and name i toolbox. 
-In here you can collect your notes, and some specific C# implementation or other items you think is meaningfull.
+    [0, 6, 2,   4, 0, 0,    0, 7, 0],
+    [1, 0, 0,   0, 0, 3,    0, 2, 0],
+    [3, 7, 4,   9, 0, 8,    0, 0, 0],
 
-## Add a new markdown file
-Pull the branch to your local machine. 
-Add new markdown file. 
-1) Make some content for the file. 
-2) perform action git add "filename.md"
-3) perform action git status
-4) Make a note on what you see.
-5) perform action git commit -m "A meaningfull comment"
-6) perform action git status
-7) Make a note on what you see. 
-8) perform the action git push
-9) perform the action git status
-8) Make you final note and draw a diagram of what is happening. 
+    [0, 9, 6,   1, 0, 7,    8, 0, 2],
+    [2, 1, 8,   0, 0, 6,    0, 4, 5],
+    [0, 5, 0,   0, 8, 0,    0, 9, 0]
+    ]
 
-Look up git cheatsheet and compare your diagram, with what the cheatsheet states. 
-Make note on what is different and make an argument for why, and how. 
+Solve()
+print(np.matrix(Box))
+    
 
-# Part 3 - Congratulations
-Congratulations. 
-You survived the first section. 
 
-## Pull the next branch
-Open the new branch Task2. 
+```
+
+# Part 2 - Datastructure
+
+## What is the primary difference between datastructure and datatypes?
+
+## Name three datastructures 
+
+### What are the strength
+
+### What are the weakness
+
+### What are the difference
+
+### What are the simalarities
+
+# Part 3 - Paradigm
+
+## What is a programming paradigm?
+
+## Compare two paradigms
