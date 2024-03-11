@@ -1,0 +1,1 @@
+git add og git status viser nuværende redigerede filer
