@@ -11,3 +11,24 @@ This branch gives you an indication of wether you have the required knowledge ab
 # Part 2 - Outline and explain five common practices for technics and method when developing applications. 
 
 
+# Software Lifecycle
+    1. Idea generation / User Story
+    2. Design, UML, Design Patterns etc.
+    3. Develop the code
+    4. Testing, debugging and QA
+    5. Release and Maintenance
+
+
+# 5 common practices
+
+    1. Design patterns
+        Resuable solutions to commons software development problems that has been proven effective over time
+    2. Agile development
+        Get feedback over time
+    3. Version control with git
+        Enables co-operation on code, and can fix code outside of the main
+    4. Documentation
+        Document what the code can do
+    5. Code review
+        Get other developers you know to look at your code for feedback
+    
